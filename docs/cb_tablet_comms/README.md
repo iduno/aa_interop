@@ -246,9 +246,10 @@ If the tablet needs to update a register, it will do so in a `setCAN` message.  
 
 # Protocol Definition
 AABBCCCCCDDEE...
+
 EE is the data for the Message Type.
 
-## Bytes 0-1 (AA) System Type
+## Chars 0-1 (AA) System Type
 | Value | Description |
 | --- | ----------- |
 | 00  | Unknown Code |
@@ -256,7 +257,7 @@ EE is the data for the Message Type.
 | 07  | Aircon |
 | 08  | RF |
 
-## Bytes 2-3 (BB) Device Type
+## Chars 2-3 (BB) Device Type
 | Value | Description |
 | --- | ----------- |
 | 00  | Unknown Code |
@@ -265,10 +266,10 @@ EE is the data for the Message Type.
 | 03  | Aircon 1 |
 | 04  | Aircon 2 |
 
-## Bytes 4-8 (CCCCC) UID
+## Chars 4-8 (CCCCC) UID
 5 character UID
 
-## Bytes 9-10 (DD) Message Type
+## Chars 9-10 (DD) Message Type (System Type RF and Aircon)
 | Value | Description |
 | --- | ----------- |
 | 01  | Zone information (JZ7) |
@@ -286,7 +287,16 @@ EE is the data for the Message Type.
 | 27  | RF device calibration (JZ58) |
 | 00  | Unknown message type |
 
-# Register Definitions
+## Chars 9-10 (DD) Message Type (System Type Lights)
+| Value | Description |
+| --- | ----------- |
+| 00  | LM Update Light |
+| 01  | LM Update Brightness Level |
+| 02  | LM Update Light With Ack JZ4 |
+| 15  | RM2 Thing State |
+| 16  | RM2 DIP Thing JZ38 |
+
+# Message Type Definitions (EE... Portion of the message) (System Type RF and Aircon)
 
 ## `01` - (Tablet to CB) - Zone Config
 
