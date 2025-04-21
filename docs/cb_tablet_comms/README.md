@@ -244,6 +244,48 @@ This sequence repeats indefinitely, keeping the tablet and control box in sync w
 
 If the tablet needs to update a register, it will do so in a `setCAN` message.  If the Control Box has any status updates to relay, it does this by sending `getCAN` in response to the `setCAN`.
 
+# Protocol Definition
+AABBCCCCCDDEE...
+EE is the data for the Message Type.
+
+## Bytes 0-1 (AA) System Type
+| Value | Description |
+| --- | ----------- |
+| 00  | Unknown Code |
+| 02  | Lighting |
+| 07  | Aircon |
+| 08  | RF |
+
+## Bytes 2-3 (BB) Device Type
+| Value | Description |
+| --- | ----------- |
+| 00  | Unknown Code |
+| 01  | Light |
+| 02  | RF Controller |
+| 03  | Aircon 1 |
+| 04  | Aircon 2 |
+
+## Bytes 4-8 (CCCCC) UID
+5 character UID
+
+## Bytes 9-10 (DD) Message Type
+| Value | Description |
+| --- | ----------- |
+| 01  | Zone information (JZ7) |
+| 02  | Unit type information (JZ9) |
+| 03  | Zone state (JZ11) |
+| 04  | Zone configuration (JZ13) |
+| 05  | Aircon state (JZ15) |
+| 06  | Version information (JZ17) |
+| 08  | CB status message (JZ22) |
+| 09  | Activation code information (JZ24) |
+| 0a  | MID information (JZ24) |
+| 12  | Zone sensor pairing (JZ33) |
+| 13  | one sensor update (JZ35) |
+| 26  | RF device pairing (JZ56) |
+| 27  | RF device calibration (JZ58) |
+| 00  | Unknown message type |
+
 # Register Definitions
 
 ## `01` - (Tablet to CB) - Zone Config
