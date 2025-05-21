@@ -243,7 +243,7 @@ At this point the Tablet has a full dump of the Air Conditioning related registe
 This sequence repeats indefinitely, keeping the tablet and control box in sync with each other.
 
 If the tablet needs to update a register, it will do so in a `setCAN` message.  If the Control Box has any status updates to relay, it does this by sending `getCAN` in response to the `setCAN`.
-
+Each of the entries appears to be 25 bytes in length and any entry that is less has zero's appended to make up 25 bytes.
 # Protocol Definition
 AABBCCCCCDDEE...
 
