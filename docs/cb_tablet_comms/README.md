@@ -298,11 +298,11 @@ EE is the data for the Message Type.
 
 # Message Type Definitions (EE... Portion of the message) (System Type RF and Aircon)
 
-## `01` - (Tablet to CB) - Zone Config
+## `01`  - Zone Config
 
 | Byte # |  Description |
 | --- | ----------- |
-| 0   | Hex 0x11 (Decimal 17) -- not sure what this means |
+| 0   | Source/Destination system |
 | 1   | # of zones |
 | 2   | # of constant zones (0-3) |
 | 3   | constant zone 1 |
@@ -310,18 +310,10 @@ EE is the data for the Message Type.
 | 5   | constant zone 3 |
 | 6   | filter clean status (00 or 01) |
 
+Source/Destiantion system (hex)
+11 for Tablet to CB
+32 for CB to Tablet
 
-## `01` - (CB to Tablet) - Zone Config
-
-| Byte # | Description |
-| --- | ----------- |
-| 0   | Hex 0x20 -- not sure what this means or why it is different from above | 
-| 1   | # of zones |
-| 2   | # of constant zones |
-| 3   | constant zone 1 |
-| 4   | constant zone 2 |
-| 5   | constant zone 3 |
-| 6   | filter clean status (00 or 01) |
 
 Example Message:
 
@@ -547,3 +539,49 @@ From: https://www.advantageair.com.au/statuscodes/
 | AA83 | Wall sensor has been detected but either no zone has been allocated or more than one zone has been allocated on a particular sensor. |
 | AA86 | Wireless wall sensor has been detected but has a low battery reading. |
 | AA89 | Multiple sensors have been been detected on the same zone. |
+
+
+
+
+
+
+
+The Unit Control Info is likely below. 
+| Hex | Description |
+| --- | ----------- |
+| 01  | UNIT_CONTROL_ACUCM  |
+| 02  | UNIT_CONTROL_INFO_DK_ADAPTOR  |
+| 04  | UNIT_CONTROL_INFO_DK_INTENSIS  |
+| 05  | UNIT_CONTROL_INFO_FJ_INTENSIS  |
+| 06  | UNIT_CONTROL_INFO_PA_INTENSIS  |
+| 07  | UNIT_CONTROL_INFO_ME_INTENSIS  |
+| 08  | UNIT_CONTROL_INFO_LG_INTENSIS  |
+| 0a  | UNIT_CONTROL_INFO_TOSH_INTENSIS  |
+| 0c  | UNIT_CONTROL_INFO_MHI_INTENSIS  |
+| 10  | UNIT_CONTROL_INFO_SAM_AA_MIDICT  |
+| 11  | UNIT_CONTROL_INFO_DK_AA_MYDICTv2  |
+| 12  | UNIT_CONTROL_INFO_PA_AA_MYDICTv2  |
+| 13  | UNIT_CONTROL_INFO_FJ_AA_MYDICTv2  |
+| 14  | UNIT_CONTROL_INFO_LG_AA_MYDICTv2  |
+| 15  | UNIT_CONTROL_INFO_ME_AA_MYDICTv2  |
+| 16  | UNIT_CONTROL_INFO_MHI_AA_MYDICTv2  |
+| 17  | UNIT_CONTROL_INFO_TOSH_AA_MYDICTv2  |
+| 18  | UNIT_CONTROL_INFO_CM_AA_MYDICT  |
+| 19  | UNIT_CONTROL_INFO_SAM_AA_MIDICTv2  |
+| 1a  | UNIT_CONTROL_INFO_NO_UNIT  |
+| 1b  | UNIT_CONTROL_INFO_HITACHI  |
+| 1c  | UNIT_CONTROL_INFO_TEMPERZONE  |
+| 1d  | UNIT_CONTROL_INFO_DICT_ELV  |
+| 1e  | UNIT_CONTROL_INFO_HAIER  |
+| 1f  | UNIT_CONTROL_INFO_GREE  |
+| 20  | UNIT_CONTROL_INFO_BRIVIS  |
+| 21  | UNIT_CONTROL_INFO_TOSHIBA_TYPE_2  |
+| 22  | UNIT_CONTROL_INFO_ACTRON_AIR_MODBUS  |
+| 23  | UNIT_CONTROL_INFO_BRAEMAR_VRF  |
+| 24  | UNIT_CONTROL_INFO_RINNAI_VRF  |
+| 25  | UNIT_CONTROL_INFO_FUJITSU_VRF  |
+| 26  | UNIT_CONTROL_INFO_FUJITSU_SPLIT_SYSTEMS  |
+| 27  | UNIT_CONTROL_INFO_HAIERv2  |
+| 32  | UNIT_CONTROL_INFO_FJ_ON_OFF_CONTROL_ONLY  |
+| 33  | UNIT_CONTROL_INFO_PA_ON_OFF_CONTROL_ONLY  |
+| 34  | UNIT_CONTROL_INFO_DK_ON_OFF_CONTROL_ONLY  |
