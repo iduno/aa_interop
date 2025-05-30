@@ -11,8 +11,8 @@ The RJ45 connection between the Control Box and the tablet has the following pin
 
 | Pin | T568A colour | T568B colour |  Description |
 | --- | ------------ | ------------ | ------------ |
-| 1   | green/white | orange/white | RS485 Comms (B)+ |
-| 2   | green | orange | RS485 Comms (A)- |
+| 1   | green/white | orange/white | RS485 Comms (B)- |
+| 2   | green | orange | RS485 Comms (A)+ |
 | 3   | orange/white | green/white | unused |
 | 4   | blue | blue | GND |
 | 5   | blue/white | blue/white | ~14V DC power to tablet |  
@@ -312,7 +312,8 @@ EE is the data for the Message Type.
 
 Source/Destiantion system (hex)
 11 for Tablet to CB
-32 for CB to Tablet
+32 for CB to Tablet ***
+0e for CB Version 8.20 ***
 
 
 Example Message:
