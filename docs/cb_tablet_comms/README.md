@@ -311,9 +311,9 @@ EE is the data for the Message Type.
 | 6   | filter clean status (00 or 01) |
 
 Source/Destiantion system (hex)
-11 for Tablet to CB
-32 for CB to Tablet ***
-0e for CB Version 8.20 ***
+- 11 for Tablet to CB
+- 20 for CB to Tablet ***
+- 0e for CB Version 8.20 To Tablet ***
 
 
 Example Message:
